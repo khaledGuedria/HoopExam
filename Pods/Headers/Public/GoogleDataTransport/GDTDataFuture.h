@@ -1,0 +1,5 @@
+XSym
+0082
+69a43f94d1b3ff0dfdcfbc0f1f474f7e
+../../../GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTDataFuture.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

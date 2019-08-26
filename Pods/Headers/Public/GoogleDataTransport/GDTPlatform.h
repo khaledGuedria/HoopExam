@@ -1,0 +1,5 @@
+XSym
+0080
+fdfe78bb6aea0cbdb686fc505de6bafc
+../../../GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTPlatform.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

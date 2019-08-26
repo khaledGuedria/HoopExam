@@ -1,0 +1,5 @@
+XSym
+0072
+cfb80795b97abfe09c0627fc01ced7ff
+../../../FirebaseAuth/Firebase/Auth/Source/Auth/FIRAuthSerialTaskQueue.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

@@ -1,0 +1,5 @@
+XSym
+0080
+782ced6a1545f4b1d9d9d7baba583b63
+../../../FirebaseAuth/Firebase/Auth/Source/Backend/FIRAuthRequestConfiguration.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

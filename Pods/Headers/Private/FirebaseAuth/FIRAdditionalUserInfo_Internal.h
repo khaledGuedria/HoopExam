@@ -1,0 +1,5 @@
+XSym
+0080
+a631d4e4d915b2d062cee4a9df9f4137
+../../../FirebaseAuth/Firebase/Auth/Source/User/FIRAdditionalUserInfo_Internal.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

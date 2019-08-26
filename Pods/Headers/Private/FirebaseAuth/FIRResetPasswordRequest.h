@@ -1,0 +1,5 @@
+XSym
+0080
+d0b26b2e8c62d4cd6fcdf61516e803c2
+../../../FirebaseAuth/Firebase/Auth/Source/Backend/RPC/FIRResetPasswordRequest.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

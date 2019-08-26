@@ -1,0 +1,5 @@
+XSym
+0085
+0fd5c5e11c9795b48034e7f0ba185cec
+../../../GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTUploadPackage.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          

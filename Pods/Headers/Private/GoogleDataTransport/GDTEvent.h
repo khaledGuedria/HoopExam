@@ -1,0 +1,5 @@
+XSym
+0077
+66dad033817e605afd8beb57aeba1342
+../../../GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTEvent.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  

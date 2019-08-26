@@ -1,0 +1,5 @@
+XSym
+0092
+79e194b1768389c07e5010d0562f8422
+../../../GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTTransformer_Private.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

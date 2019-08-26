@@ -1,0 +1,5 @@
+XSym
+0084
+8417d9857f2ea95f00d72435a7a84348
+../../../FirebaseAuth/Firebase/Auth/Source/AuthProvider/FIRAuthCredential_Internal.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

@@ -1,0 +1,5 @@
+XSym
+0079
+638713baba9fcef3fb803594edade424
+../../../FirebaseAuth/Firebase/Auth/Source/Backend/RPC/FIRSecureTokenResponse.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
