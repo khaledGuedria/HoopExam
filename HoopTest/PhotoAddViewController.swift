@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 class PhotoAddViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
@@ -64,12 +65,46 @@ class PhotoAddViewController: UIViewController, UIImagePickerControllerDelegate,
             guard metadata != nil else {
             print(error!)
          return
-         }
+         
+            }
+
+            storageRef.downloadURL { (url, error) in
+                
+                guard let downloadURL = url else {
+                    
+                    return
+                }
+                
+                //prompt URL
+                print(downloadURL)
+                //save it to CoreData
+                self.saveUrlToCoreData(url: downloadURL)
+
+                
+            }
 
          
          })
 
         //performSegue(withIdentifier: "returnToCollectionSegue", sender: sender)
+    }
+    
+    //Add photo url to coredata
+    func saveUrlToCoreData(url:URL) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Image", in: managedContext)
+        let Image = NSManagedObject(entity: entity!, insertInto: managedContext)
+        
+        do{
+        try Image.setValue(String(contentsOf: url), forKey: "img_url")
+        } catch let error as NSError{
+            print(error.userInfo)
+        }
+        appDelegate.saveContext()
+        
     }
     
     

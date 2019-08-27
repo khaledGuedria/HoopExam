@@ -15,21 +15,28 @@ class PhotoDetailsViewController: UIViewController {
     
     
     //var
-    
+    var photo_url:String?
     
     //show View
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.getImageFromURL()
         // Do any additional setup after loading the view.
     }
 
     //Actions
-    
-    //Firebase remove
-    @IBAction func deletePhoto(_ sender: Any) {
-
+    func getImageFromURL() {
+        
+        do {
+            let imageSource = URL(fileURLWithPath: self.photo_url!)
+            let imageData = try Data(contentsOf: imageSource)
+            selectedImage.image = UIImage(data: imageData)
+            
+        } catch let error as NSError{
+            print(error.userInfo)
+        }
 
     }
+
 
 }

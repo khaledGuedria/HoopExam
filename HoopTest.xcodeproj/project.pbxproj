@@ -17,6 +17,7 @@
 		5D018E06230696CF00E78E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D018E04230696CF00E78E8B /* LaunchScreen.storyboard */; };
 		5D018E11230696CF00E78E8B /* HoopTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D018E10230696CF00E78E8B /* HoopTestTests.swift */; };
 		5D018E1C230696CF00E78E8B /* HoopTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D018E1B230696CF00E78E8B /* HoopTestUITests.swift */; };
+		5D416A1A2315415F0095CF3E /* hoopTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D416A182315415F0095CF3E /* hoopTest.xcdatamodeld */; };
 		5D99477E2309AD85002CDF93 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99477D2309AD85002CDF93 /* PhotoCollectionViewController.swift */; };
 		5D9947802309AD9C002CDF93 /* PhotoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99477F2309AD9C002CDF93 /* PhotoAddViewController.swift */; };
 		5D9947822309ADB7002CDF93 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9947812309ADB7002CDF93 /* PhotoDetailsViewController.swift */; };
@@ -57,6 +58,7 @@
 		5D018E17230696CF00E78E8B /* HoopTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoopTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D018E1B230696CF00E78E8B /* HoopTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoopTestUITests.swift; sourceTree = "<group>"; };
 		5D018E1D230696CF00E78E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D416A192315415F0095CF3E /* hoopTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hoopTest.xcdatamodel; sourceTree = "<group>"; };
 		5D99477D2309AD85002CDF93 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		5D99477F2309AD9C002CDF93 /* PhotoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddViewController.swift; sourceTree = "<group>"; };
 		5D9947812309ADB7002CDF93 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				5D018E02230696CF00E78E8B /* Assets.xcassets */,
 				5D018E04230696CF00E78E8B /* LaunchScreen.storyboard */,
 				5D018E07230696CF00E78E8B /* Info.plist */,
+				5D416A182315415F0095CF3E /* hoopTest.xcdatamodeld */,
 				5DFD7AF923141E590063467E /* GoogleService-Info.plist */,
 				5D99477D2309AD85002CDF93 /* PhotoCollectionViewController.swift */,
 				5D99477F2309AD9C002CDF93 /* PhotoAddViewController.swift */,
@@ -384,6 +387,7 @@
 				5D018DFE230696CB00E78E8B /* ViewController.swift in Sources */,
 				5D9947822309ADB7002CDF93 /* PhotoDetailsViewController.swift in Sources */,
 				5D9947802309AD9C002CDF93 /* PhotoAddViewController.swift in Sources */,
+				5D416A1A2315415F0095CF3E /* hoopTest.xcdatamodeld in Sources */,
 				5D99477E2309AD85002CDF93 /* PhotoCollectionViewController.swift in Sources */,
 				5D018DFC230696CB00E78E8B /* AppDelegate.swift in Sources */,
 			);
@@ -714,6 +718,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5D416A182315415F0095CF3E /* hoopTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5D416A192315415F0095CF3E /* hoopTest.xcdatamodel */,
+			);
+			currentVersion = 5D416A192315415F0095CF3E /* hoopTest.xcdatamodel */;
+			path = hoopTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5D018DF0230696CB00E78E8B /* Project object */;
 }
