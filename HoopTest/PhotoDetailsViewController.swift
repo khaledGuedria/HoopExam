@@ -15,7 +15,7 @@ class PhotoDetailsViewController: UIViewController {
     
     
     //var
-    var photo_url:String?
+    var photo_url:URL?
     
     //show View
     override func viewDidLoad() {
@@ -28,8 +28,8 @@ class PhotoDetailsViewController: UIViewController {
     func getImageFromURL() {
         
         do {
-            let imageSource = URL(fileURLWithPath: self.photo_url!)
-            let imageData = try Data(contentsOf: imageSource)
+            
+            let imageData = try Data(contentsOf: photo_url!)
             selectedImage.image = UIImage(data: imageData)
             
         } catch let error as NSError{

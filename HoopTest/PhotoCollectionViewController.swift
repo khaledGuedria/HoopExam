@@ -23,6 +23,7 @@ class PhotoCollectionViewController: UIViewController, UITableViewDelegate, UITa
     var images: [NSManagedObject] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(self.images.count)
         return images.count
     }
     
@@ -34,8 +35,8 @@ class PhotoCollectionViewController: UIViewController, UITableViewDelegate, UITa
         let imgView = contentView?.viewWithTag(1) as! UIImageView
         
         let image = images[indexPath.row]
-        
         let imagesource = image.value(forKey: "img_url") as? URL
+
         do {
             let imageData = try Data(contentsOf: imagesource!)
             imgView.image = UIImage(data: imageData)
@@ -59,12 +60,12 @@ class PhotoCollectionViewController: UIViewController, UITableViewDelegate, UITa
             let todelete = images[indexPath.row]
             managedContext.delete(todelete)
             
-            let stringURL = todelete.value(forKey: "img_url") as! String
+            let stringURL = todelete.value(forKey: "img_url") as! URL
             self.removeAction(url: stringURL)
             
             images.remove(at: indexPath.row)
+            self.numLabel.text = String(images.count)
             tableView.reloadData()
-            print("Item deleted!")
         }
     }
 
@@ -74,6 +75,7 @@ class PhotoCollectionViewController: UIViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
         self.fetchCoreDate()
         // Do any additional setup after loading the view.
+
     }
     
     //display image on full screen
@@ -89,7 +91,7 @@ class PhotoCollectionViewController: UIViewController, UITableViewDelegate, UITa
                 
                 print(index!)
                 let image = images[index!.item]
-                let url = image.value(forKey: "img_url") as! String
+                let url = image.value(forKey: "img_url") as! URL
                 print(url)
                 destinationViewController.photo_url = url
                 
@@ -107,9 +109,10 @@ class PhotoCollectionViewController: UIViewController, UITableViewDelegate, UITa
     //Actions
     
     //REMOVE BY URL
-    func removeAction(url:String) {
+    func removeAction(url:URL) {
+
         let storage = Storage.storage()
-        let storageRef = storage.reference(forURL: url)
+        let storageRef = storage.reference(forURL: url.absoluteString)
         //removing..
         storageRef.delete { error in
             if let error = error {
@@ -121,6 +124,7 @@ class PhotoCollectionViewController: UIViewController, UITableViewDelegate, UITa
         }
         
     }
+
     
     //GET ALL
     func fetchCoreDate(){
@@ -129,7 +133,7 @@ class PhotoCollectionViewController: UIViewController, UITableViewDelegate, UITa
         let persistentContainer = appDelegate.persistentContainer
         let managedContext = persistentContainer.viewContext
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Image")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FirePhoto")
         
         do {
             

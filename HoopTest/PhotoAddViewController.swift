@@ -17,11 +17,12 @@ class PhotoAddViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     //var
-
+    var cdsize = 0
+    
     //Show View
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.getCoreDateSize()
         // Do any additional setup after loading the view.
     }
     
@@ -53,40 +54,40 @@ class PhotoAddViewController: UIViewController, UIImagePickerControllerDelegate,
     //Firebase Save
     @IBAction func saveAction(_ sender: Any) {
         
-        
+        print("Save button pressed !")
         let storage = Storage.storage()
         var data = Data()
         data = self.uploadedPhoto.image!.jpegData(compressionQuality: 0.8)! 
          //create storage reference
          let storageRef = storage.reference()
-        let imageRef = storageRef.child("images/image.png")
+
+        let imageRef = storageRef.child("images/" + String(self.cdsize + 1) + ".png")
         _ = imageRef.putData(data, metadata: nil,completion: { (metadata,error) in
          
-            guard metadata != nil else {
+            if error != nil {
             print(error!)
-         return
+            return
          
             }
-
-            storageRef.downloadURL { (url, error) in
+            
+            imageRef.downloadURL(completion: {url, error in
                 
-                guard let downloadURL = url else {
-                    
+                if error != nil {
+                    print("Failed to download url:", error!)
                     return
                 }
                 
-                //prompt URL
-                print(downloadURL)
                 //save it to CoreData
-                self.saveUrlToCoreData(url: downloadURL)
-
+                self.saveUrlToCoreData(url: url!)
+                //redirect to image collection
+                self.performSegue(withIdentifier: "returnToCollectionSegue", sender: sender)
                 
-            }
-
+            })
          
          })
+        
 
-        //performSegue(withIdentifier: "returnToCollectionSegue", sender: sender)
+
     }
     
     //Add photo url to coredata
@@ -95,16 +96,32 @@ class PhotoAddViewController: UIViewController, UIImagePickerControllerDelegate,
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let entity = NSEntityDescription.entity(forEntityName: "Image", in: managedContext)
+        let entity = NSEntityDescription.entity(forEntityName: "FirePhoto", in: managedContext)
         let Image = NSManagedObject(entity: entity!, insertInto: managedContext)
         
-        do{
-        try Image.setValue(String(contentsOf: url), forKey: "img_url")
-        } catch let error as NSError{
-            print(error.userInfo)
-        }
+        Image.setValue(url, forKey: "img_url")
+        print("saved to coredata successfully !")
+
         appDelegate.saveContext()
         
+    }
+    
+    //get coredata size
+    func getCoreDateSize(){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let persistentContainer = appDelegate.persistentContainer
+        let managedContext = persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FirePhoto")
+        
+        do {
+            
+            cdsize = try (managedContext.fetch(request) as! [NSManagedObject]).count
+            
+        } catch  let error as NSError{
+            print(error.userInfo)
+        }
     }
     
     
