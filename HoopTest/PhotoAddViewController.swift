@@ -14,6 +14,7 @@ class PhotoAddViewController: UIViewController, UIImagePickerControllerDelegate,
 
     //Widgets
     @IBOutlet weak var uploadedPhoto: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     //var
@@ -23,6 +24,7 @@ class PhotoAddViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getCoreDateSize()
+        self.activityIndicator.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -55,6 +57,9 @@ class PhotoAddViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func saveAction(_ sender: Any) {
         
         print("Save button pressed !")
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+                
         let storage = Storage.storage()
         var data = Data()
         data = self.uploadedPhoto.image!.jpegData(compressionQuality: 0.8)! 
